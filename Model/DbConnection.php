@@ -2,11 +2,11 @@
 
 class DbConnection
 {
-    private $host;
-    private $dbname;
-    private $username;
-    private $password;
-    private $port;
+    protected $host;
+    protected $dbname;
+    protected $username;
+    protected $password;
+    protected $port;
 
     public function __construct()
     {
