@@ -1,7 +1,7 @@
 # Files not needed to upload
 .idea
 vendor
-config.env.sample
+
 
 #DB connection to local database
 config.env.local
