@@ -5,3 +5,5 @@ config.env.sample
 
 #DB connection to local database
 config.env.local
+composer.json
+composer.lock
