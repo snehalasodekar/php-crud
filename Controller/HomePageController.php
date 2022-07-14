@@ -19,7 +19,8 @@ class HomePageController
                     $controller = new ClassRoomController($classRoomLoader);
                     break;
                 default:
-                    $controller = new HomePageController();
+                    $studentLoader = new StudentLoader();
+                    $controller = new StudentController($studentLoader);
                     break;
             }
             $controller->render();
