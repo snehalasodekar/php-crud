@@ -2,11 +2,12 @@
 
 class DbConnection
 {
-    protected $host;
-    protected $dbname;
-    protected $username;
-    protected $password;
-    protected $port;
+    private $host;
+    private $dbname;
+    private $username;
+    private $password;
+    private $port;
+    protected PDO $connect;
 
     public function __construct()
     {
@@ -25,7 +26,7 @@ class DbConnection
     public function makeConnection()
     {
         try {
-            $connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';port =' . $this->port, $this->username, $this->password);
+            $this->connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';port =' . $this->port, $this->username, $this->password);
             //echo "Connected to  successfully.";
             return $connect;
 
