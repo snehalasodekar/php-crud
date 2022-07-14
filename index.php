@@ -1,13 +1,14 @@
 <?php
 declare(strict_types=1);
 
+require ('vendor/autoload.php');
 require 'Model/DbConnection.php';
 require 'Model/ClassRoomLoader.php';
-require ('vendor/autoload.php');
-require 'Controller/HomePageController.php';
-require 'Model/DbConnection.php';
 require 'Model/StudentLoader.php';
+require 'Model/Student.php';
+require 'Controller/HomePageController.php';
 require 'Controller/ClassRoomController.php';
+require 'Controller/StudentController.php';
 
 $controller = new HomePageController();
 $controller->render();
