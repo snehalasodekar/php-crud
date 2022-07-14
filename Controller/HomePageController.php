@@ -4,12 +4,15 @@ class HomePageController
 {
     public function render(){
 
-        $classRoomLoader = new ClassRoomLoader();
+        /*$classRoomLoader = new ClassRoomLoader();
         $controller = new ClassRoomController($classRoomLoader);
         $controller->renderClassRoom();
-        //$classRoomLoader = new ClassRoomLoader();
-        $classRoomArray = $classRoomLoader->getAllClassRooms();
+        $classRoomArray = $classRoomLoader->getAllClassRooms();*/
 
-        var_dump($classRoomArray);
+        $studentLoader = new StudentLoader();
+        $controller = new StudentController($studentLoader);
+
+
+        $controller->render();
     }
 }
