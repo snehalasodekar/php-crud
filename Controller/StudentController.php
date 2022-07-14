@@ -10,9 +10,12 @@ class StudentController
 
     public function render(){
         $studentArr = $this->studentLoader->getAllStudents();
-        var_dump($studentArr);
-        foreach ($studentArr as $student){
-            var_dump($student->getTeachers());
+        if (isset($_POST['detail'])){
+            $id = (int) $_POST['detail']-1;
+            $foundStudent = $studentArr[$id];
+            include_once 'View/studentDetailView.php';
+        }else{
+            include_once 'View/studentView.php';
         }
 
     }
