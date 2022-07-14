@@ -1,8 +1,18 @@
 <?php
 declare(strict_types=1);
 
-class classRoomController extends DbConnection {
+class ClassRoomController{
 
+    private DbConnection $classRoomLoader;
+
+    public function __construct(DbConnection $con)
+    {
+        $this->classRoomLoader = $con;
+    }
+    public function renderClassRoom(){
+
+        $this->classRoomLoader->getAllClassRooms();
+    }
 
 
 }
