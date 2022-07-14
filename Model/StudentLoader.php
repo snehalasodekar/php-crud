@@ -29,7 +29,7 @@ class StudentLoader extends DbConnection
             from teacher_table , class_table , student
             where student.class_id = class_table.id and teacher_table.class_id = class_table.id
             and student.id =' . $id;
-        return $this->connect->query($query)->fetchAll();
+        return $this->connect->query($query)->fetchAll(PDO::FETCH_COLUMN);
 
     }
 
