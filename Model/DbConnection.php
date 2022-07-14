@@ -7,8 +7,9 @@ class DbConnection
     private $username;
     private $password;
     private $port;
+    protected PDO $connect;
 
-    public function __construct()
+   public function __construct()
     {
         $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__), 'config.env.local');
         $dotenv->load();
@@ -17,21 +18,32 @@ class DbConnection
         $this->dbname = $_ENV['DATABASE_NAME'];
         $this->username = $_ENV['DATABASE_USER'];
         $this->password = $_ENV['DATABASE_PASSWORD'];
-        $this->port = $_ENV['DATABASE_PORT'];
         // echo $this->password;
-        $this->makeConnection();
+        //$this->makeConnection();
+        $this->connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname .  ';port =' . $this->port, $this->username, $this->password);
+
     }
 
     public function makeConnection()
     {
         try {
-            $connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';port =' . $this->port, $this->username, $this->password);
-            //echo "Connected to  successfully.";
-            return $connect;
+            $this->connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname .  ';port =' . $this->port, $this->username, $this->password);
+            echo "Connected to  successfully.";
+            return $this->connect;
 
         } catch (PDOException $pe) {
-            die("Could not connect to the database  $this->dbname :" . $pe->getMessage());
+            echo "Could not connect to the database  $this->dbname :" . $pe->getMessage();
         }
+    }
+
+    public function testData(){
+
+        $dbh = $this->makeConnection();
+
+
+        $sql = "select * from class_table";
+        $query = $dbh->query($sql);
+        return $query->fetch(PDO::FETCH_ASSOC);
     }
 
 }
