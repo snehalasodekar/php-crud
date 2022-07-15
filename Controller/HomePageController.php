@@ -25,7 +25,7 @@ class HomePageController
             }
             $controller->render();
         }else{
-            include_once 'View/homepageView.php';
+            include_once 'View/homepageView.php.php';
         }
     }
 }
