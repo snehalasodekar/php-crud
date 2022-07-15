@@ -1,0 +1,1 @@
+<div class="alert alert-success" role="alert">The Student was successfully deleted</div>
