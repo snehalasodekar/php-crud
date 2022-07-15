@@ -1,4 +1,0 @@
-<?php
-echo "Homepage View";
-//var_dump($teacherD);
-?>

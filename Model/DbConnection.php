@@ -27,6 +27,7 @@ class DbConnection
     public function makeConnection()
     {
         try {
+
             $this->connect = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname .  ';port =' . $this->port, $this->username, $this->password);
             echo "Connected to  successfully.";
             return $this->connect;
