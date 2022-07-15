@@ -1,5 +1,4 @@
-<?php
-?>
+
 <form method="get">
 <div class="container">
         <div class="row">
@@ -11,4 +10,3 @@
         </div>
 </div>
 </form>
-

@@ -19,12 +19,13 @@ class HomePageController
                     $controller = new ClassRoomController($classRoomLoader);
                     break;
                 default:
-                    $controller = new HomePageController();
+                    $studentLoader = new StudentLoader();
+                    $controller = new StudentController($studentLoader);
                     break;
             }
             $controller->render();
         }else{
-            include_once 'View/homepageView.php';
+            include_once 'View/homepageView.php.php';
         }
     }
 }
