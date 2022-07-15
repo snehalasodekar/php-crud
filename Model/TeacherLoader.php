@@ -55,20 +55,4 @@ class TeacherLoader extends DbConnection
         $sql = "SELECT * FROM teacher_table where firstName LIKE '%".$teacherName."%'";
         return $this->connect->query($sql)->fetchAll();
     }
-    /*
-       * return teacher data by teacher Id
-       */
-    public function getTeacherById($teacherId){
-        $sql = "SELECT * FROM teacher_table where firstName LIKE '%".$teacherId."%'";
-        return $this->connect->query($sql)->fetchAll();
-    }
-
-    /*
-     * Return all studentsBy of specific teacher teacherId
-     */
-    public function getAllStudentsByTeacherName($teacherName){
-        $sql = "SELECT * FROM teacher_table where firstName LIKE '%".$teacherName."%'";
-        return $this->connect->query($sql)->fetchAll();
-    }
-
 }
