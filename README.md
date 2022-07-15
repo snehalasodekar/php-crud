@@ -16,3 +16,6 @@ School management system with CRUD implementation with MVC
 
 ## Database Implementation 
 ![](src/img/dbTableStructure.png)
+
+## Project's flow chart
+![](src/img/crudFlowChart.PNG)
