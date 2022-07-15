@@ -9,8 +9,10 @@
     </thead>
     <tbody>
     <form method="post">
-        <?php //d$teacherDataArr =;
-        foreach ($teacherDataArr as $teacher):
+
+        <button type="submit" name="create" class="btn btn-warning"
+                                value="create">Create</button>
+        <?php foreach ($teacherDataArr as $teacher):
             /* echo "<pre/>";
           print_r($teacher);exit; */?>
             <tr>
@@ -21,8 +23,6 @@
                     <div class="btn-group" role="group" aria-label="mixed style">
                         <button type="submit" name="delete" class="btn btn-danger"
                                 value="<?= $teacher->getId() ?>">Delete</button>
-                        <button type="submit" name="create" class="btn btn-warning"
-                                value="<?= $teacher->getId() ?>">Create</button>
                         <button type="submit" name="detail" class="btn btn-success"
                                 value="<?= $teacher->getId() ?>">More Detail</button>
                     </div>
