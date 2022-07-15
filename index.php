@@ -11,7 +11,6 @@ require 'Model/Student.php';
 require 'Controller/HomePageController.php';
 require 'Controller/ClassRoomController.php';
 require 'Controller/StudentController.php';
-require 'Controller/HomePageController.php';
 require 'Controller/TeacherController.php';
 
 require 'View/header.php';
