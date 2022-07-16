@@ -16,10 +16,7 @@ class TeacherLoader extends DbConnection
     {
         $allTeachersData = $this->connect->query("SELECT * FROM teacher_table")->fetchAll();
         foreach ($allTeachersData as $teacher) {
-            $studentsOfTeacher = $this->getStudentsForTeacher($teacher['id']);
-            $classesOfTeacher = $this->getClassesForTeacher($teacher['id']);
-
-            $teacherObj = new Teacher($teacher['id'], $teacher['firstname'], $teacher['lastname'], $teacher['email'], $teacher['address'], $teacher['class_id'], $studentsOfTeacher, $classesOfTeacher);
+            $teacherObj = new Teacher($teacher['id'], $teacher['firstname'], $teacher['lastname'], $teacher['email'], $teacher['address'], $teacher['class_id']);
             array_push($this->teacherDetailsArr, $teacherObj);
         }
         return $this->teacherDetailsArr;
