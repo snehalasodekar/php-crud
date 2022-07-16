@@ -13,8 +13,8 @@
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Address</th>
-                                    <th scope="col">Class</th>
                                     <th scope="col">Students</th>
+                                    <th scope="col">Class</th>
 
                                 </tr>
                                 </thead>
@@ -34,9 +34,10 @@
                             <div>
                                 <form method="post">
                                     <td>
-                                        <input type="hidden" name="teacherId" value="<?= $teacherDetails['id']; ?>"/>
+                                        <input type="hidden" name="teacherIdHidden"
+                                               value="<?= $teacherDetails['id']; ?>"/>
                                         <button type="submit" name="page" class="btn gradient-custom-4"
-                                                value="updateTeacher">Update data
+                                                value="updateTeacherForm">Update data
                                         </button>
 
                                         <hr/>
