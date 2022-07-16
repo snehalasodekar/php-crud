@@ -28,7 +28,7 @@ class TeacherController
                         $tescherClasses = $this->DbConTeacherLoader->getClassesForTeacher($teacherId);
                         include 'View/teacher/teacherDetailView.php';
                         break;
-                    case 'detailReturn': //go back button
+                    case 'detailReturn': //go back button from teacher detail info page to teacher view page
                         $teacherDataArr = $this->DbConTeacherLoader->getAllTeachers();
                         include_once 'View/teacherView.php';
                         break;
