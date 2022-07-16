@@ -9,10 +9,20 @@ class ClassRoomController{
     {
         $this->classRoomLoader = $con;
     }
-    public function renderClassRoom(){
+    public function render(){
 
-        $this->classRoomLoader->getAllClassRooms();
-    }
+        $allClassesArray = $this->classRoomLoader->retrieveAllClassRooms();
+        if(isset($_POST['info'])){
+        $id = (int) $_POST['info'];
+        $course = $allClassesArray[$id];
+        include_once 'View/ClassesView.php';
+        }else {
+            include_once'View/ClassesView.php';
+        }
+
+
+
+}
 
 
 }
