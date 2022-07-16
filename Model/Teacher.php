@@ -8,10 +8,8 @@ class Teacher
     private string $email;
     private string $address;
     private int $classId;
-    private array $students;
-    private array $className;
 
-    public function __construct($id,$firstname,$lastname,$email,$address,$classId,$students,$className)
+    public function __construct($id,$firstname,$lastname,$email,$address,$classId)
     {
         $this->id = $id;
         $this->firstName = $firstname;
@@ -19,8 +17,6 @@ class Teacher
         $this->email = $email;
         $this->address = $address;
         $this->classId = $classId;
-        $this->students = $students;
-        $this->className = $className;
     }
 
     /**
@@ -69,22 +65,6 @@ class Teacher
     public function getClassId(): int
     {
         return $this->classId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getClassName() :array
-    {
-        return $this->className;
-    }
-
-    /**
-     * @return array
-     */
-    public function getStudents() :array
-    {
-        return $this->students;
     }
 
 }
