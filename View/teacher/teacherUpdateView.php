@@ -71,7 +71,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center ">
-                                    <button type="button" class="btn border-warning btn-lg">Reset all</button> &nbsp;&nbsp;
+                                    <button type="reset" class="btn border-warning btn-lg">Reset all</button> &nbsp;&nbsp;
                                     <button type="submit"
                                             name="page" value="updateTeacherQuery"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">

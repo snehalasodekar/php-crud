@@ -5,6 +5,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body">
+                            <h2 class="text-uppercase text-center mb-5">Teacher Detail Info</h2>
                             <table class="table">
                                 <thead>
                                 <tr class="pb-3">

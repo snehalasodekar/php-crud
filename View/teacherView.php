@@ -4,7 +4,8 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
-                        <div class="card-body p-5">
+                        <div class="card-body p-4">
+                            <h2 class="text-uppercase text-center mb-5">Teacher View</h2>
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -17,7 +18,8 @@
                                 <tbody>
                                 <tr class="float :right;">
                                     <form method="post">
-                                        <button type="submit" name="page" class="btn border-warning m-4 btn-lg gradient-custom-4"
+                                        <button type="submit" name="page"
+                                                class="btn border-warning btn-lg gradient-custom-4"
                                                 value="createTeacher">
                                             Create New Teacher
                                         </button>
@@ -33,20 +35,31 @@
                                                 <div class="btn-group" role="group" aria-label="mixed style">
                                                     <input type="hidden" name="teacherIdHidden"
                                                            value="<?= $teacher->getId() ?>"/>
-                                                    <button type="submit" name="page" class="btn border-danger btn-lg"
+                                                    <button type="submit" name="page" class="btn border-danger"
                                                             value="deleteTeacher">Delete
                                                     </button> &nbsp;&nbsp;
-                                                    <button type="submit" name="page" class="btn border-success btn-lg"
+                                                    <button type="submit" name="page" class="btn border-success"
                                                             value="detailTeacher">More Detail
                                                     </button>
                                                 </div>
-
                                             </th>
                                         </tr>
                                     </form>
                                 <?php endforeach; ?>
 
                                 </tbody>
+                                <hr/>
+                                <tfoot>
+                                <td>
+                                        <form method="post">
+                                            <button type="submit" name="page"
+                                                    class="btn border-warning"
+                                                    value="indexPage">
+                                                Home
+                                            </button>
+                                        </form>
+                                </td>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

@@ -7,7 +7,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                            <h2 class="text-uppercase text-center mb-5">Create a new Teacher</h2>
                             <form method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
@@ -55,7 +55,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center ">
-                                    <button type="button" class="btn border-warning btn-lg">Reset all</button> &nbsp;&nbsp;
+                                    <button type="reset" class="btn border-warning btn-lg">Reset all</button> &nbsp;&nbsp;
                                     <button type="submit"
                                             name="page" value="newTeacher"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
