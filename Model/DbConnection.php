@@ -37,14 +37,4 @@ class DbConnection
         }
     }
 
-    public function testData(){
-
-        $dbh = $this->makeConnection();
-
-
-        $sql = "select * from class_table";
-        $query = $dbh->query($sql);
-        return $query->fetch(PDO::FETCH_ASSOC);
-    }
-
 }

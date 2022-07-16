@@ -42,4 +42,24 @@ class StudentLoader extends DbConnection
         $class = $this->connect->query($query)->fetch();
         return $class[0];
     }
+
+    public function deleteStudent(int $id): void{
+        $query = 'delete from student where id =' . $id;
+        $this->connect->query($query);
+    }
+
+    public function getClasses(): array{
+        $sql = "select id, name
+                from class_table";
+        return $this->connect->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+    }
+    public function getTeachers(): array{
+        $sql = "select id, firstname
+                from teacher_table";
+        return $this->connect->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    public function editStudent(): void{
+
+    }
 }

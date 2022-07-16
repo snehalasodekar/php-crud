@@ -18,8 +18,6 @@
             <div class="btn-group" role="group" aria-label="mixed style">
                 <button type="submit" name="delete" class="btn btn-danger"
                         value="<?= $student->getId() ?>">Delete</button>
-                <button type="submit" name="edit" class="btn btn-warning"
-                        value="<?= $student->getId() ?>">Edit</button>
                 <button type="submit" name="detail" class="btn btn-success"
                         value="<?= $student->getId() ?>">More Detail</button>
             </div>
