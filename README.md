@@ -52,3 +52,6 @@ School management system with CRUD implementation with MVC.
 
 ## Project's flow chart
 ![](src/img/crudFlowChart.PNG)
+
+## Part of final Result
+![](src/img/php_crud_3.png)
