@@ -72,6 +72,8 @@ class StudentController
                 $classes = $this->studentLoader->getClasses();
                 include_once 'View/addNewStudentView.php';
             }
+        }elseif (isset($_POST['back'])){
+            include_once 'View/homepageView.php';
         }
         else{
             $studentArr = $this->studentLoader->getAllStudents();
