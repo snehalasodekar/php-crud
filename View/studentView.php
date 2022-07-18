@@ -30,3 +30,6 @@
     </form>
     </tbody>
 </table>
+<form action="" method="post">
+    <button class="btn btn-info" name="back" value="back">Back</button>
+</form>
