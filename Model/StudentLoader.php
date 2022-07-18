@@ -55,10 +55,16 @@ class StudentLoader extends DbConnection
     }
 
     public function updateStudent(int $id , string $name,string $lastName,string $email,string $address ,int $classId): void{
-       $sql = "update `Student`
-                set `firstname` = '".$name."', `lastname` ='".$lastName."', `email` ='".$email."' , `address` ='".$address."' , Student.class_id =".$classId."
+       $sql = "update `student`
+                set `firstname` = '".$name."', `lastname` ='".$lastName."', `email` ='".$email."' , `address` ='".$address."' , student.class_id =".$classId."
                 where id = ".$id;
        $this->connect->query($sql);
+    }
+
+    public function addNewStudent(string $name, string $lastName,string $email,string $address,int $classId): void{
+        $sql = "insert into student(`firstname`, `lastname`, `email`, `address`, `class_id`)
+                values ('".$name."', '".$lastName."', '".$email."', '".$address."', ".$classId.")";
+        $this->connect->query($sql);
     }
 
 }
