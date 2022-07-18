@@ -6,14 +6,14 @@ class ClassRoom
     private string $name;
     private string $location;
     private string $teachers;
-    private string $students;
+    private array $students;
 
-    public function __construct(array $row){
+    public function __construct(array $row, $students){
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
         $this->teachers = $row['coachfirstname'];
-        $this->students = $row['studentname'];
+        $this->students = $students;
     }
 
     /**
@@ -43,7 +43,7 @@ class ClassRoom
     /**
      * @return array
      */
-    public function getStudents(): string
+    public function getStudents(): array
     {
         return $this->students;
     }
