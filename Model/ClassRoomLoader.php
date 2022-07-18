@@ -52,7 +52,7 @@ WHERE student.class_id = $classId";
         $sql = "UPDATE class_table ct
 JOIN student s on ct.id = s.class_id
 JOIN teacher_table tt on ct.id = tt.class_id
-SET s.firstname ='bb', tt.lastname ='bb'
+SET s.firstname ='BABA', tt.lastname ='LALALAND'
 WHERE s.class_id = $classId or tt.class_id = $classId or ct.id = $classId";
 
         return $this->connect->query($sql);

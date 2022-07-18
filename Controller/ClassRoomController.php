@@ -26,7 +26,9 @@ class ClassRoomController{
            $editing = $this->classRoomLoader->editClasses($id);
             include_once 'View/classes/classesEditForm.php';
         }
-        else{
+        elseif(isset($_POST['goback'])){
+            include_once 'View/homepageView.php';
+        }else{
             include_once 'View/ClassesView.php';
         }
 

@@ -54,9 +54,9 @@
                                 <tfoot>
                                 <td>
                                     <form method="post">
-                                        <button type="submit" name="page"
+                                        <button type="submit" name="goback"
                                                 class="btn border-warning"
-                                                value="indexPage">
+                                                value="goback">
                                             Home
                                         </button>
                                     </form>

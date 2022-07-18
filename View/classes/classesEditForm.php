@@ -60,8 +60,8 @@
                             <hr/>
                             <form method="post">
                                 <div>
-                                    <button type="submit" name="page" class="btn border-success"
-                                            value="detailReturn">Go Back
+                                    <button type="submit" name="goback" class="btn border-success"
+                                            value="goback">Go Back
                                     </button>
                                 </div>
                             </form>
