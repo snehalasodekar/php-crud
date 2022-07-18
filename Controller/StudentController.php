@@ -22,13 +22,13 @@ class StudentController
                         $foundStudent = $student;
                     }
                 }
-                include_once 'View/studentDetailView.php';
+                include_once 'View/student/studentDetailView.php';
             }
         }elseif(isset($_POST['delete'])){
             $id = (int) $_POST['delete'];
             $this->studentLoader->deleteStudent($id);
             $studentArr = $this->studentLoader->getAllStudents();
-            include_once 'View/deleteStudentSuccessfulView.php';
+            include_once 'View/student/deleteStudentSuccessfulView.php';
             include_once 'View/studentView.php';
         }elseif (isset($_POST['edit'])){
             $studentArr = $this->studentLoader->getAllStudents();
@@ -43,7 +43,7 @@ class StudentController
                     }
                 }
                 $classes = $this->studentLoader->getClasses();
-                include_once 'View/editStudentView.php';
+                include_once 'View/student/editStudentView.php';
             }
         }elseif (isset($_POST['editStudent'])){
             $name = $_POST['firstName'];
@@ -70,7 +70,7 @@ class StudentController
                 include_once 'View/studentView.php';
             }else{
                 $classes = $this->studentLoader->getClasses();
-                include_once 'View/addNewStudentView.php';
+                include_once 'View/student/addNewStudentView.php';
             }
         }elseif (isset($_POST['back'])){
             include_once 'View/homepageView.php';
