@@ -1,3 +1,6 @@
+<form action="" method="post">
+    <button class="btn btn-success" name="addStudent">Add New Student</button>
+</form>
 <table class="table">
     <thead>
     <tr>
