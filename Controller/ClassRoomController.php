@@ -14,11 +14,12 @@ class ClassRoomController{
         $allClassesArray = $this->classRoomLoader->retrieveAllClassRooms();
         if(isset($_POST['info'])){
         $id = (int) $_POST['info'];
-        $course = $allClassesArray[$id];
-        include_once 'View/ClassesView.php';
+        $Students = $this->classRoomLoader->retrieveAllStudents($id);
+        include_once 'View/classesDetailView.php';
         }else {
             include_once'View/ClassesView.php';
         }
+
 
 
 
