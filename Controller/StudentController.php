@@ -43,9 +43,6 @@ class StudentController
                     }
                 }
                 $classes = $this->studentLoader->getClasses();
-
-                //$teachers = $this->studentLoader->getTeachers();
-                //var_dump($classes);exit;
                 include_once 'View/editStudentView.php';
             }
         }elseif (isset($_POST['editStudent'])){
@@ -58,6 +55,23 @@ class StudentController
             $this->studentLoader->updateStudent($id , $name, $lastName, $email, $address, $classId);
             $studentArr = $this->studentLoader->getAllStudents();
             include_once 'View/studentView.php';
+        }elseif (isset($_POST['addStudent'])){
+            if ($_POST['addStudent'] === 'submit'){
+                $name = $_POST['firstName'];
+                $lastName = $_POST['lastName'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $classId = (int) $_POST['selectClass'];
+                $this->studentLoader->addNewStudent($name, $lastName, $email, $address, $classId);
+                $studentArr = $this->studentLoader->getAllStudents();
+                include_once 'View/studentView.php';
+            }elseif($_POST['addStudent'] === 'backToStudentView'){
+                $studentArr = $this->studentLoader->getAllStudents();
+                include_once 'View/studentView.php';
+            }else{
+                $classes = $this->studentLoader->getClasses();
+                include_once 'View/addNewStudentView.php';
+            }
         }
         else{
             $studentArr = $this->studentLoader->getAllStudents();
