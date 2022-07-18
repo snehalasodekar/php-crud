@@ -51,15 +51,20 @@ class StudentLoader extends DbConnection
     public function getClasses(): array{
         $sql = "select id, name
                 from class_table";
-        return $this->connect->query($sql)->fetchAll(PDO::FETCH_COLUMN);
-    }
-    public function getTeachers(): array{
-        $sql = "select id, firstname
-                from teacher_table";
-        return $this->connect->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+        return $this->connect->query($sql)->fetchAll(/*PDO::FETCH_CLASS*/);
     }
 
-    public function editStudent(): void{
-
+    public function updateStudent(int $id , string $name,string $lastName,string $email,string $address ,int $classId): void{
+       $sql = "update `student`
+                set `firstname` = '".$name."', `lastname` ='".$lastName."', `email` ='".$email."' , `address` ='".$address."' , student.class_id =".$classId."
+                where id = ".$id;
+       $this->connect->query($sql);
     }
+
+    public function addNewStudent(string $name, string $lastName,string $email,string $address,int $classId): void{
+        $sql = "insert into student(`firstname`, `lastname`, `email`, `address`, `class_id`)
+                values ('".$name."', '".$lastName."', '".$email."', '".$address."', ".$classId.")";
+        $this->connect->query($sql);
+    }
+
 }

@@ -32,17 +32,48 @@ class StudentController
             include_once 'View/studentView.php';
         }elseif (isset($_POST['edit'])){
             $studentArr = $this->studentLoader->getAllStudents();
-            $id = (int) $_POST['edit'];
-            $foundStudent = $studentArr[0];
-            foreach ($studentArr as $student){
-                if ($student->getId()=== $id){
-                    $foundStudent = $student;
+            if($_POST['edit'] === 'backToStudentView'){
+                include_once 'View/studentView.php';
+            }else{
+                $id = (int) $_POST['edit'];
+                $foundStudent = $studentArr[0];
+                foreach ($studentArr as $student){
+                    if ($student->getId()=== $id){
+                        $foundStudent = $student;
+                    }
                 }
+                $classes = $this->studentLoader->getClasses();
+                include_once 'View/editStudentView.php';
             }
-            $classes = $this->studentLoader->getClasses();
-            $teachers = $this->studentLoader->getTeachers();
-            /*var_dump($classes);exit;*/
-            include_once 'View/editStudentView.php';
+        }elseif (isset($_POST['editStudent'])){
+            $name = $_POST['firstName'];
+            $lastName = $_POST['lastName'];
+            $email = $_POST['email'];
+            $address = $_POST['address'];
+            $id =(int) $_POST['editStudent'];
+            $classId = (int) $_POST['selectClass'];
+            $this->studentLoader->updateStudent($id , $name, $lastName, $email, $address, $classId);
+            $studentArr = $this->studentLoader->getAllStudents();
+            include_once 'View/studentView.php';
+        }elseif (isset($_POST['addStudent'])){
+            if ($_POST['addStudent'] === 'submit'){
+                $name = $_POST['firstName'];
+                $lastName = $_POST['lastName'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $classId = (int) $_POST['selectClass'];
+                $this->studentLoader->addNewStudent($name, $lastName, $email, $address, $classId);
+                $studentArr = $this->studentLoader->getAllStudents();
+                include_once 'View/studentView.php';
+            }elseif($_POST['addStudent'] === 'backToStudentView'){
+                $studentArr = $this->studentLoader->getAllStudents();
+                include_once 'View/studentView.php';
+            }else{
+                $classes = $this->studentLoader->getClasses();
+                include_once 'View/addNewStudentView.php';
+            }
+        }elseif (isset($_POST['back'])){
+            include_once 'View/homepageView.php';
         }
         else{
             $studentArr = $this->studentLoader->getAllStudents();
